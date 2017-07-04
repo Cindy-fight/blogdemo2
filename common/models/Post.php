@@ -52,13 +52,13 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
-            'content' => 'Content',
-            'tags' => 'Tags',
-            'status' => 'Status',
-            'create_time' => 'Create Time',
-            'update_time' => 'Update Time',
-            'author_id' => 'Author ID',
+            'title' => '标题',
+            'content' => '内容',
+            'tags' => '标签',
+            'status' => '状态',
+            'create_time' => '创建时间',
+            'update_time' => '更新时间',
+            'author_id' => '作者',
         ];
     }
 
@@ -83,6 +83,7 @@ class Post extends \yii\db\ActiveRecord
      */
     public function getStatus0()
     {
+    	//Poststatus::className()  表示poststatus 这个表名,  关联条件：poststatus.id = post.status.
         return $this->hasOne(Poststatus::className(), ['id' => 'status']);
     }
 }

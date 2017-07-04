@@ -41,6 +41,10 @@ class PostController extends Controller
 //         $postModel = \Yii::$app->db->createCommand('select * from post')->queryOne();
 //         var_dump($postModel);
 //         die();
+
+//         $posts = Post::find()->where(['AND', ['status' => 2], ['author_id' => 1], ['like', 'title', 'yii2']])->orderBy('id desc')->all();
+//         var_dump($posts);
+//         exit();
         
         return $this->render('index', [
             'searchModel' => $searchModel,
