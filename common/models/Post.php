@@ -86,4 +86,18 @@ class Post extends \yii\db\ActiveRecord
     	//Poststatus::className()  表示poststatus 这个表名,  关联条件：poststatus.id = post.status.
         return $this->hasOne(Poststatus::className(), ['id' => 'status']);
     }
+    
+    public function beforeSave($insert){
+    	if (parent::beforeSave($insert)){
+    		if ($insert){
+    			$this->create_time = time();
+    			$this->update_time = time();
+    		}else {
+    			$this->update_time = time();
+    		}
+    		return true;
+    	}else {
+    		return false;
+    	}
+    }
 }
