@@ -80,16 +80,16 @@ class PostSearch extends Post
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'status' => $this->status,
-            'create_time' => $this->create_time,
-            'update_time' => $this->update_time,
-            'author_id' => $this->author_id,
+            'post.id' => $this->id,
+            'post.status' => $this->status,
+            'post.create_time' => $this->create_time,
+            'post.update_time' => $this->update_time,
+            'post.author_id' => $this->author_id,
         ]);
 
-        $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'tags', $this->tags]);
+        $query->andFilterWhere(['like', 'post.title', $this->title])
+            ->andFilterWhere(['like', 'post.content', $this->content])
+            ->andFilterWhere(['like', 'post.tags', $this->tags]);
         
         $query->join('INNER JOIN', 'Adminuser', 'post.author_id = Adminuser.id');
         $query->andFilterWhere(['like', 'Adminuser.nickname', $this->authorName]);
