@@ -8,6 +8,7 @@ use common\models\PostSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use common\models\Tag;
 
 /**
  * PostController implements the CRUD actions for Post model.
@@ -59,6 +60,11 @@ class PostController extends Controller
      */
     public function actionView($id)
     {
+//         $tags = 'Yii2,小部件,widget,span';
+//         $result = Tag::string2array($tags);
+//         var_dump($result);
+//         exit();
+    	
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
