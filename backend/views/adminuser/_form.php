@@ -22,8 +22,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'profile')->textarea(['rows' => 6]) ?>
 
+    <?= $form->field($model, 'auth_key')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'password_hash')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'password_reset_token')->textInput(['maxlength' => true]) ?>
+
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton('新增', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

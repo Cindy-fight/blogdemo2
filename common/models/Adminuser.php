@@ -35,7 +35,7 @@ class Adminuser extends \yii\db\ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['username', 'nickname', 'password', 'email', 'auth_key', 'password_hash', 'password_reset_token'], 'required'],
+            [['username', 'nickname', 'password', 'email', 'auth_key', 'password_hash'], 'required'],
             [['profile'], 'string'],
             [['username', 'nickname', 'password', 'email'], 'string', 'max' => 128],
         	[['auth_key'], 'string', 'max' => 32],
@@ -50,14 +50,14 @@ class Adminuser extends \yii\db\ActiveRecord implements IdentityInterface
     {
         return [
             'id' => 'ID',
-            'username' => 'Username',
-            'nickname' => 'Nickname',
-            'password' => 'Password',
+            'username' => '用户名',
+            'nickname' => '昵称',
+            'password' => '密码',
             'email' => 'Email',
-            'profile' => 'Profile',
+            'profile' => '简介',
         	'auth_key' => 'Auth Key',
         	'password_hash' => 'Password Hash',
-        	'password_reset_token' => 'Password Reset Token',
+        	'password_reset_token' => '重置密码',
         ];
     }
 
