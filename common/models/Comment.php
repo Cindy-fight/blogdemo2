@@ -118,9 +118,4 @@ class Comment extends \yii\db\ActiveRecord
     	}
     }
     
-    
-    
-    
-    
-    
 }
