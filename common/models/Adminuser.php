@@ -17,7 +17,6 @@ use yii\web\IdentityInterface;
  * @property string $auth_key 
  * @property string $password_hash 
  * @property string $password_reset_token 
- *
  * @property Post[] $posts
  */
 class Adminuser extends \yii\db\ActiveRecord implements IdentityInterface
