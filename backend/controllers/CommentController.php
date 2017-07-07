@@ -124,6 +124,10 @@ class CommentController extends Controller
     
     public function actionApprove($id)
     {
+    	if (!\Yii::$app->user->can('approveComment')){
+    		throw new ForbiddenHttpException('对不起，你没有进行该操作的权限！');
+    	}
+    	
     	$model = $this->findModel($id);
     	if ($model->approve()) //审核
     	{
