@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use Symfony\Component\Console\Command\Command;
 
 /**
  * This is the model class for table "comment".
@@ -116,6 +117,11 @@ class Comment extends \yii\db\ActiveRecord
     	}else {
     		return false;
     	}
+    }
+    
+    public static function findRecentComments($limit= 10)
+    {
+    	return Comment::find()->where(['status' => 2])->orderBy('create_time desc')->limit($limit)->all();
     }
     
 }
