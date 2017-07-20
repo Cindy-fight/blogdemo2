@@ -40,7 +40,7 @@ return [
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => true,
+            'showScriptName' => false,
             'rules' => [
             		'<controller:(post|comment)>s' => '<controller>/index',
             		'<controller:\w+>/<id:\d+>' => '<controller>/view',

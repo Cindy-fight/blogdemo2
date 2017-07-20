@@ -40,7 +40,7 @@ return [
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => true,
+            'showScriptName' => false,
         	'suffix' => '.html',
             'rules' => [
             		'<controller:\w+>/<id:\d+>' => '<controller>/detail',
