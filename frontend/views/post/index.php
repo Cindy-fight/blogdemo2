@@ -6,6 +6,8 @@ use yii\base\Widget;
 use frontend\components\TagsCloudWidget;
 use frontend\components\RctReplyWidget;
 use yii\helpers\Html;
+use common\models\Post;
+use common\library\Util;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\PostSearch */
@@ -38,6 +40,25 @@ $this->params['breadcrumbs'][] = $this->title;
 				<ul class = "list-group">
 					<li class = "list-group-item">
 						<span class = "glyphicon glyphicon-search" aria-hidden = "true"></span>&nbsp;&nbsp;查找文章
+						
+						<?php 
+// 						$data = Yii::$app->cache->get('Counts');
+// 						if (!$data){
+// 							$count = Post::find()->where(['status' => 2])->count();
+// 							Yii::$app->cache->set('Counts', $count);
+// 						}
+// 						echo '( ' . $data . ' )';
+// 						?>
+						
+						<?php 
+						$data = Util::fetchCache('Counts');
+						if (!$data){
+							$count = Post::find()->where(['status' => 2])->count();
+							Util::setCache('Counts', $count);
+						}
+						echo '( ' . $data . ' )';
+						?>
+						
 					</li>
 					<li class = "list-group-item">
 						<form class="form-inline" action = "index.php?r=post/index" id = "w0" method = "get" >
