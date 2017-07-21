@@ -5,6 +5,7 @@ namespace common\library;
 use Yii;
 use yii\helpers\ArrayHelper;
 use common\extension\EasyMail;
+use common\library\Constant;
 
 class Util{
 	
@@ -250,23 +251,23 @@ class Util{
 	 */
 	public static function doSendMail($to, $subject, $content){
 		$account1=array(
-				"email"		=> EMAIL_ADDR,
-				"name" 		=> EMAIL_ACCOUNT_NAME,
+				"email"		=> Constant::EMAIL_ADDR,
+				"name" 		=> Constant::EMAIL_ACCOUNT_NAME,
 				"type"		=> '0',
-				"host" 		=> SMTP_HOST,
-				"port" 		=> SMTP_PORT,
-				"usr"  		=> SMTP_USER,
-				"pass" 		=> SMTP_PWD,
-				"from"		=> array(EMAIL_ADDR,EMAIL_ACCOUNT_NAME),
+				"host" 		=> Constant::SMTP_HOST,
+				"port" 		=> Constant::SMTP_PORT,
+				"usr"  		=> Constant::SMTP_USER,
+				"pass" 		=> Constant::SMTP_USER,
+				"from"		=> array(Constant::EMAIL_ADDR,Constant::EMAIL_ACCOUNT_NAME),
 		);
 		$mail = array(
-				'reply-to'		=> array(EMAIL_ADDR,EMAIL_ACCOUNT_NAME),
+				'reply-to'		=> array(Constant::EMAIL_ADDR,Constant::EMAIL_ACCOUNT_NAME),
 				"dst"			=> "utf8",
 				"subject"		=> $subject,
 				'html'			=> $content,
-				"from"			=> array(EMAIL_ADDR,EMAIL_ACCOUNT_NAME),
+				"from"			=> array(Constant::EMAIL_ADDR,Constant::EMAIL_ACCOUNT_NAME),
 				"to"			=> $to,
-				"return_path"	=> SMTP_RETURN,
+				"return_path"	=> Constant::SMTP_RETURN,
 				"src_encoding"	=> "utf-8",
 		);
 		$genMail = EasyMail::write_mail($mail);
