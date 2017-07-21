@@ -22,9 +22,9 @@ class TestController extends Controller
 	
 	public function actionSend()
 	{
-		$to = "1098454719@qq.com";
-		$subject = "帅哥，考虑的怎么样了";
-		$content = "帅哥，考虑的怎么样了，要不要一起吃个饭!";
+		$to = "592557247@qq.com";
+		$subject = "Hello";
+		$content = "Hello World!";
 		
 		$account1=array(
 				"email"		=> 'no-reply@maimob.cn',
@@ -50,7 +50,7 @@ class TestController extends Controller
 		$genMail = EasyMail::write_mail($mail);
 		$sendstat = EasyMail::send($account1, $genMail);
 		
-// 		$result = Util::doSendMail($to, $subject, $content);
+// 		$result = Util::doSendMail($to, $subject, $content);  //同样的程序调用 总是显示邮件发送失败
 		
 		if ($sendstat)
 		{

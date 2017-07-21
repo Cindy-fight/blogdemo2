@@ -1,13 +1,18 @@
 <?php
+namespace common\library;
 
-/**
+class Constant{
+	
+/*
  * system mail config
 */
-define('EMAIL_ADDR', 			'no-reply@maimob.cn');
-define('EMAIL_ACCOUNT_NAME', 	'maimob');
-define('SMTP_HOST',				'smtp.exmail.qq.com');
-define('SMTP_PORT', 			25);
-define('SMTP_USER', 			'no-reply@maimob.cn');
-define('SMTP_PWD', 				'mm13ab');
-define('SMTP_RETURN', 			'no-reply@maimob.cn');
 
+const EMAIL_ADDR 			= 'no-reply@maimob.cn';
+const EMAIL_ACCOUNT_NAME 	= 'maimob';
+const SMTP_HOST 			= 'smtp.exmail.qq.com';
+const SMTP_PORT 			= 25;
+const SMTP_USER				= 'no-reply@maimob.cn';
+const SMTP_PWD 				= 'mm13ab';
+const SMTP_RETURN 			= 'no-reply@maimob.cn';
+
+}
